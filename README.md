@@ -2,6 +2,24 @@
 
 A multiplayer Roblox game where players battle AI brainrot enemies with swords, defend their bases, steal from other players, and upgrade their arsenal.
 
+## ✅ Quick Start
+
+### Option 1: Download Ready-to-Play Place (EASIEST)
+1. Download `BrainrotGame.rbxl` from this repo
+2. Open it in **Roblox Studio**
+3. Click **Play** - game is ready to go!
+
+### Option 2: Clone Repository
+1. Open Roblox Studio
+2. **File** → **Version Control** → **Clone Repository**
+3. Paste: `https://github.com/thereishe/roblox-brainrot-game.git`
+4. Click Clone
+
+### Option 3: Manual Setup
+Follow the detailed instructions in `SETUP.md`
+
+---
+
 ## Features
 
 ### 🎮 Core Gameplay
@@ -37,28 +55,34 @@ A multiplayer Roblox game where players battle AI brainrot enemies with swords, 
 - Real-time combat with enemy animations
 - Persistent player data via DataStore
 
+---
+
 ## Game Structure
 
 ```
 roblox-brainrot-game/
+├── BrainrotGame.rbxl          # 👈 READY-TO-PLAY PLACE FILE
 ├── README.md
-├── src/
-│   ├── server/
-│   │   ├── main.server.lua           # Main server entry point
-│   │   ├── MapBuilder.lua            # Generates the game map
-│   │   ├── EnvironmentEffects.lua    # Particles, lighting, sounds
-│   │   ├── PlayerManager.lua         # Player data & base assignment
-│   │   ├── CombatSystem.lua          # RNG combat mechanics
-│   │   ├── ShopSystem.lua            # Shop & upgrades
-│   │   └── BaseSystem.lua            # Base creation & raiding
-│   ├── client/
-│   │   ├── startup.client.lua        # Client initialization
-│   │   ├── EnemySelectorUI.lua       # Enemy selection interface
-│   │   └── ShopUI.lua                # Shop interface
-│   └── shared/
-│       ├── GameConfig.lua            # Game constants & balance
-│       └── PlayerData.lua            # Player data structure
+├── SETUP.md
+└── src/
+    ├── server/
+    │   ├── main.server.lua
+    │   ├── MapBuilder.lua
+    │   ├── EnvironmentEffects.lua
+    │   ├── PlayerManager.lua
+    │   ├── CombatSystem.lua
+    │   ├── ShopSystem.lua
+    │   └── BaseSystem.lua
+    ├── client/
+    │   ├── startup.client.lua
+    │   ├── EnemySelectorUI.lua
+    │   └── ShopUI.lua
+    └── shared/
+        ├── GameConfig.lua
+        └── PlayerData.lua
 ```
+
+---
 
 ## How to Play
 
@@ -74,24 +98,20 @@ roblox-brainrot-game/
    - **Gyatt** (10% spawn) - Hard, 30-60 HP
    - **Ohio** (4% spawn) - Very Hard, 50-100 HP
    - **Mewing** (1% spawn) - LEGENDARY, 80-150 HP
-3. Combat is RNG-based:
-   - Your damage varies ±20% per hit
-   - Enemy damage is randomized
-   - Win = earn coins + add enemy to your base
-   - Lose = take damage, try again with better sword
+3. Combat is RNG-based - win to earn coins!
 
 ### Using the Shop
 1. Open **Shop UI** (right side)
-2. **Buy Swords**: Progress through better weapons for more damage
-3. **Upgrade Damage**: Increases base damage (costs 50 coins per level)
-4. **Upgrade Speed**: Decreases attack cooldown (costs 75 coins per level)
+2. **Buy Swords**: Progress through better weapons
+3. **Upgrade Damage**: Increases base damage
+4. **Upgrade Speed**: Decreases attack cooldown
 
 ### Base Defense & Raiding
 1. Your base is at a fixed location on the map
-2. Enable stealing to allow others to raid you (high risk, high reward)
+2. Enable stealing to allow others to raid you
 3. Raid other bases that have stealing enabled
-4. Steal items to grow your wealth
-5. Collect defeated enemies in your base
+
+---
 
 ## Enemy Rarity & Rewards
 
@@ -113,53 +133,13 @@ roblox-brainrot-game/
 | Diamond | 7 | 1.2s | 800 coins | |
 | Legendary | 12 | 1.0s | 2000 coins | |
 
-## Technical Details
+---
 
-### Data Persistence
-- Uses Roblox DataStore for saving player data
-- Auto-saves on player leave
-- Loads on player rejoin
-- Stores: coins, current sword, upgrades, base index, defeated enemies
+## Need Help?
 
-### RNG System
-- Enemy stats generated on spawn
-- Damage rolls vary ±20% each turn
-- Rarity chances weight which enemies appear
-- Combat continues until one side is defeated
-
-### Base System
-- 6 fixed base positions around the map center
-- Each player assigned one base on join
-- Base is released when player leaves
-- Server capacity: 6 players max
-
-## Development Setup
-
-1. **Install Roblox Studio**
-2. **Create new Place**
-3. **Copy all scripts** from `src/` folders into game hierarchy:
-   - Server scripts → ServerScriptService
-   - Client scripts → StarterPlayer > StarterCharacterScripts
-   - Shared modules → ReplicatedStorage
-4. **Copy GameConfig & PlayerData** to ReplicatedStorage
-5. **Run the game!**
-
-## Future Enhancements
-
-- [ ] Enemy animations
-- [ ] Combat animations for swords
-- [ ] Sound effects
-- [ ] Leaderboard system
-- [ ] Team-based raids
-- [ ] Boss battles
-- [ ] Custom base decorations
-- [ ] Pet system (captured brainrot)
-- [ ] Daily quests
-- [ ] Battle pass system
-
-## Credits
-
-Built with Lua and Roblox Studio
+- **Setup Issues?** Check `SETUP.md`
+- **Want to edit code?** All scripts are in `src/` folder
+- **Having bugs?** Open an issue on GitHub
 
 ---
 
